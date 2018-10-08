@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 
 # grupos de rotas
@@ -63,12 +53,12 @@ Route::middleware(['prefix' => 'painel2'], function (){
 
 # nao e necessario passagem de parametro, opcional
 
-Route::get('/categoria2/{idCat?}', function ($idCat = null){
+Route::get('/cat/{idCat?}', function ($idCat = null){
     return "Post da categoria $idCat";
 });
 
 # rotas com passagem de parametro
-Route::get('/categoria/{idCat}', function ($idCat){
+Route::get('/cat/{idCat}', function ($idCat){
     return "Posts da categoria $idCat";
 });
 
@@ -119,8 +109,25 @@ Route::get('/empresa', function (){
 
 
 
+# usando controllers
+# tudo depois do @ e uma metodo do meu controller
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@index');
+
+Route::get('/contato', 'SiteController@contato');
+
+Route::get('categoria/{id}', 'SiteController@categoria');
+
+
+
+
+
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+
+
+
