@@ -12,6 +12,71 @@
 */
 
 
+# grupos de rotas
+# uso o prefix para economizar na escrita do codigo
+Route::group(['prefix' => 'painel'], function (){
+
+    Route::get('/', function (){
+        return 'Dashboard';
+    });
+
+    Route::get('/grupo1', function (){
+        return 'Grupo 1';
+    });
+
+    Route::get('/grupo2', function (){
+        return 'Grupo 2';
+    });
+
+});
+
+
+# somente pessoas autenticadas podem acessar MIDDLEWARE
+
+
+Route::middleware(['prefix' => 'painel2'], function (){
+
+    Route::get('/', function (){
+        return 'Dashboard';
+    });
+
+    Route::get('/grupo1', function (){
+        return 'Grupo 1';
+    });
+
+    Route::get('/grupo2', function (){
+        return 'Grupo 2';
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+# nao e necessario passagem de parametro, opcional
+
+Route::get('/categoria2/{idCat?}', function ($idCat = null){
+    return "Post da categoria $idCat";
+});
+
+# rotas com passagem de parametro
+Route::get('/categoria/{idCat}', function ($idCat){
+    return "Posts da categoria $idCat";
+});
+
+
+
+
+
+
 
 # nomeando rota
 Route::get('/nome/nome2/nome3', function (){
@@ -25,6 +90,10 @@ Route::get('/nome/nome2/nome3', function (){
 Route::get('/teste', function (){
    return redirect()->route('rota.nomeada');
 });
+
+
+
+
 
 
 # rota generica
@@ -43,6 +112,14 @@ Route::post('/post', function (){
 Route::get('/empresa', function (){
     return view('empresa');
 });
+
+
+
+
+
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
