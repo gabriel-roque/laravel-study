@@ -109,15 +109,22 @@ Route::get('/empresa', function (){
 
 
 
-# usando controllers
+# usando CONTROLLERS
 # tudo depois do @ e uma metodo do meu controller
+# sempre quando for trabalhar com nameSpace tem que apontar o caminho
 
 
-Route::get('/', 'SiteController@index');
+Route::get('/', 'Site\SiteController@index');
 
-Route::get('/contato', 'SiteController@contato');
+Route::get('/contato', 'Site\SiteController@contato');
 
-Route::get('categoria/{id}', 'SiteController@categoria');
+Route::get('/categoria/{id}', 'Site\SiteController@categoria');
+
+// Usando passagem de parametro Opcional
+
+Route::get('/categoria2/{id?}', 'Site\SiteController@categoriaOps');
+
+Route::get('/painel', 'Painel\PainelController@painel');
 
 
 

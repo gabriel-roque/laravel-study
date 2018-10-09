@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
@@ -21,5 +22,14 @@ class SiteController extends Controller
     {
         return "Listagem de Posts da categoria {$id}";
     }
+
+    public function categoriaOps($id = 1)
+    {
+        return "Listagem de Posts da categoria {$id}";
+    }
+
+
+
+
 
 }
