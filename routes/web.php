@@ -75,7 +75,8 @@ Route::get('/nome/nome2/nome3', function (){
 
 
 # redirecionamento de rota
-/* usar redicrection para um rota nomeada facilita na alteracao, pois busca pelo seu ID e nao pelo caminho*/
+/* usar redicrection para um rota nomeada facilita na alteracao,
+ pois busca pelo seu ID e nao pelo caminho*/
 
 Route::get('/teste', function (){
    return redirect()->route('rota.nomeada');
@@ -109,22 +110,36 @@ Route::get('/empresa', function (){
 
 
 
-# usando CONTROLLERS
-# tudo depois do @ e uma metodo do meu controller
-# sempre quando for trabalhar com nameSpace tem que apontar o caminho
+/*
+
+usando CONTROLLERS
+> tudo depois do @ e uma metodo do meu controller
+> sempre quando for trabalhar com nameSpace tem que apontar o caminho
+> ou usar um grupo de rotas apontando o name namespace
+
+*/
+
+Route::group(['namespace' => 'Site'], function (){
 
 
-Route::get('/', 'Site\SiteController@index');
+    Route::get('/', 'SiteController@index');
 
-Route::get('/contato', 'Site\SiteController@contato');
+    Route::get('/contato', 'SiteController@contato');
 
-Route::get('/categoria/{id}', 'Site\SiteController@categoria');
+    Route::get('/categoria/{id}', 'SiteController@categoria');
 
 // Usando passagem de parametro Opcional
 
-Route::get('/categoria2/{id?}', 'Site\SiteController@categoriaOps');
+    Route::get('/categoria2/{id?}', 'SiteController@categoriaOps');
+
+});
 
 Route::get('/painel', 'Painel\PainelController@painel');
+
+
+# php artisian make:controller Painel\\NomeDoController
+# cria direto dentro do namespace
+
 
 
 
