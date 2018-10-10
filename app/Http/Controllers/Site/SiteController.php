@@ -36,8 +36,15 @@ class SiteController extends Controller
     public function index()
     {
         $teste = 123;
-        return view('teste', ['teste' => $teste]);
+        $teste2 = 321;
+        $teste3 = 231;
+
+
         //enviando dados para view
+        # op 1
+//        return view('teste', ['teste' => $teste]);
+        # op2
+        return view('teste', compact('teste', 'teste2', 'teste3'));
     }
 
     public function contato()
