@@ -97,8 +97,6 @@ Route::group(['namespace' => 'Site'], function (){
 
     Route::get('/categoria/{id}', 'SiteController@categoria');
 
-// Usando passagem de parametro Opcional
-
     Route::get('/categoria2/{id?}', 'SiteController@categoriaOps');
 
 });

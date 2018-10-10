@@ -35,7 +35,9 @@ class SiteController extends Controller
 
     public function index()
     {
-        return 'Home do site';
+        $teste = 123;
+        return view('teste', ['teste' => $teste]);
+        //enviando dados para view
     }
 
     public function contato()
