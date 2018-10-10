@@ -1,7 +1,6 @@
 <?php
 
 
-
 # grupos de rotas
 # uso o prefix para economizar na escrita do codigo
 Route::group(['prefix' => 'painel'], function (){
@@ -21,34 +20,6 @@ Route::group(['prefix' => 'painel'], function (){
 });
 
 
-# somente pessoas autenticadas podem acessar MIDDLEWARE
-
-
-Route::middleware(['prefix' => 'painel2'], function (){
-
-    Route::get('/', function (){
-        return 'Dashboard';
-    });
-
-    Route::get('/grupo1', function (){
-        return 'Grupo 1';
-    });
-
-    Route::get('/grupo2', function (){
-        return 'Grupo 2';
-    });
-
-});
-
-
-
-
-
-
-
-
-
-
 
 
 # nao e necessario passagem de parametro, opcional
@@ -61,8 +32,6 @@ Route::get('/cat/{idCat?}', function ($idCat = null){
 Route::get('/cat/{idCat}', function ($idCat){
     return "Posts da categoria $idCat";
 });
-
-
 
 
 
@@ -137,20 +106,13 @@ Route::group(['namespace' => 'Site'], function (){
 Route::get('/painel', 'Painel\PainelController@painel');
 
 
-# php artisian make:controller Painel\\NomeDoController
+# php artisian make:controller pasta\\NomeDoController
 # cria direto dentro do namespace
 
+# usando CONTROLLERS ROSOURCES
+# php artisian make:controller pasta\\NomeDoController --resource
 
-
-
-
-
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-
+Route::resource('/painel/produtos', 'Painel\ProdutoController');
 
 
 
