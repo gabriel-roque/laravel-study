@@ -153,3 +153,7 @@ Route::get('/painel', 'Painel\PainelController@painel');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

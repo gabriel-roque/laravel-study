@@ -8,6 +8,31 @@ use App\Http\Controllers\Controller;
 class SiteController extends Controller
 {
 
+# para acessar tem ser autenticado
+
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
+
+# especificar somente alguns
+
+//    public function __construct()
+//    {
+//        $this->middleware('auth')
+//            ->only(['contato', 'categoria']);
+//    }
+
+# exceto
+
+//    public function __construct()
+//    {
+//
+//        $this->middleware('auth')
+//            ->except('index');
+//
+//    }
+
     public function index()
     {
         return 'Home do site';
