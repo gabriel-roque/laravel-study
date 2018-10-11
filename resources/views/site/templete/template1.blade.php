@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
     <head>
-        <title>Laravel</title>
+        <title>{{$title}}</title>
     </head>
 
     <body>

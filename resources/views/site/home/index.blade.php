@@ -1,8 +1,3 @@
-<h1>Home Page do Site</h1>
-
-{{--para passar dados do meu controller para a view--}}
-{{$teste}} - {{$teste2}} - {{$teste3}}
-
 
 {{--USANDO TAGS BLADE.PHP--}}
 
@@ -10,6 +5,15 @@
 
 @section('content')
 
+    <h1>Home page do site</h1>
     <h2>Passando coteudo via tags blade</h2>
+
+    {{--Com essa tag ela me PROTEGE--}}
+    {{$xss}}
+
+    {{--Com essa ela executa--}}
+    {{--{!! $xss !!}--}}
+
+
 
 @endsection

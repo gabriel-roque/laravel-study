@@ -35,16 +35,10 @@ class SiteController extends Controller
 
     public function index()
     {
-        $teste = 123;
-        $teste2 = 321;
-        $teste3 = 231;
+        $title = 'Laravel 5.7';
+        $xss = '<script>alert("Ataque XSS")</script>';
 
-
-        //enviando dados para view
-        # op 1
-//        return view('teste', ['teste' => $teste]);
-        # op2
-        return view('site.home.index', compact('teste', 'teste2', 'teste3'));
+        return view('site.home.index', compact('title', 'xss'));
     }
 
     public function contato()
