@@ -44,12 +44,12 @@ class SiteController extends Controller
         # op 1
 //        return view('teste', ['teste' => $teste]);
         # op2
-        return view('site.teste', compact('teste', 'teste2', 'teste3'));
+        return view('site.home.index', compact('teste', 'teste2', 'teste3'));
     }
 
     public function contato()
     {
-        return 'Contato Page';
+        return view('site.contato.contato');
     }
 
     public function categoria($id)
