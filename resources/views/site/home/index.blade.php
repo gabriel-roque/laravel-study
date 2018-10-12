@@ -24,7 +24,13 @@
 
     @endif
 
+    {{--Verifica se e falso--}}
 
+    @unless($var == 12)
+
+        <p>Nao e igual</p>
+
+    @endunless
 
 
 
