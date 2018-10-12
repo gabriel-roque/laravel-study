@@ -14,6 +14,18 @@
     {{--Com essa ela executa--}}
     {{--{!! $xss !!}--}}
 
+    @if($var == 123)
+
+        <p>Entrou no IF</p>
+
+        @else
+
+        <p>Entrou no ELSE</p>
+
+    @endif
+
+
+
 
 
 @endsection

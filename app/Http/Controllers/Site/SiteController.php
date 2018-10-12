@@ -38,7 +38,9 @@ class SiteController extends Controller
         $title = 'Laravel 5.7';
         $xss = '<script>alert("Ataque XSS")</script>';
 
-        return view('site.home.index', compact('title', 'xss'));
+        $var = 123;
+
+        return view('site.home.index', compact('title', 'xss', 'var'));
     }
 
     public function contato()
