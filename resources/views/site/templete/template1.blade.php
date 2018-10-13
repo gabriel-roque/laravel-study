@@ -2,12 +2,16 @@
 <html lang="pt-br">
     <head>
         <title>{{$title}}</title>
+
     </head>
 
     <body>
 
-        {{--tag para alocar conteudo dinamico--}}
+
+    {{--tag para alocar conteudo dinamico--}}
         @yield('content')
+
+    @stack('scripts')
 
 
     </body>

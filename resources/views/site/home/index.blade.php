@@ -70,3 +70,14 @@
 
 
 @endsection
+
+{{-- caso eu queria adicionar scripts nas minhas pagina,
+mas somente em paginas especificas,
+
+caso contrario eu colocaria ele direto no meu templete
+--}}
+
+@push('scripts')
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+@endpush

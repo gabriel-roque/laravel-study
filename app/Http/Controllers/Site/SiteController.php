@@ -48,7 +48,8 @@ class SiteController extends Controller
 
     public function contato()
     {
-        return view('site.contato.contato');
+        $title = 'Laravel 5.7';
+        return view('site.contato.contato', compact('title'));
     }
 
     public function categoria($id)
