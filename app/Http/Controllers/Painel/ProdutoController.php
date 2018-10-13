@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Painel;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Painel\Product;
+
+//php artisan make:controller TesteController --resource (criar com recurso)
 
 class ProdutoController extends Controller
 {
@@ -12,8 +15,13 @@ class ProdutoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+
+//    Injetando a dependencia do Model
+    public function index(Product $product)
     {
+        $products = $product->all();
+        return view('painel.products.index', compact('products'));
 
     }
 

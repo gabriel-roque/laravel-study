@@ -104,11 +104,11 @@ Route::group(['namespace' => 'Site'], function (){
 Route::get('/painel', 'Painel\PainelController@painel');
 
 
-# php artisian make:controller pasta\\NomeDoController
+# php artisan make:controller pasta\\NomeDoController
 # cria direto dentro do namespace
 
 # usando CONTROLLERS ROSOURCES
-# php artisian make:controller pasta\\NomeDoController --resource
+# php artisan make:controller pasta\\NomeDoController --resource
 
 Route::resource('/painel/produtos', 'Painel\ProdutoController');
 
