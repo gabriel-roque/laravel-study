@@ -32,6 +32,31 @@
 
     @endunless
 
+    {{--loop de repeticao--}}
+    
+    @for ($i = 0; $i <= 10; $i++)
+
+        <p>valor {{$i}}</p>
+    
+    @endfor
+
+    {{--foreach--}}
+    
+    @foreach ($array as $campo)
+
+        {{$campo}}
+    
+    @endforeach
+
+    {{--forelse--}}
+    @forelse($array2 as $campo)
+
+        {{$campo}}
+
+    @empty
+        <p>Nao possui valores no array</p>
+
+    @endforelse
 
 
 @endsection
