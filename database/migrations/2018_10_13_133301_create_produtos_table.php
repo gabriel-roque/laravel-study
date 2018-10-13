@@ -2,6 +2,8 @@
 
 //php artisan make:migration create_nome_da_tabela
 //php artisa migrate - para rodar as migrations
+//php artisan migrate:refresh
+
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -21,7 +23,7 @@ class CreateProdutosTable extends Migration
             $table->string('name', 150);
             $table->integer('number');
             $table->boolean('active');
-            $table->string('image', 200);
+            $table->string('image', 200)->nullable();
             $table->enum('category', ['eletronicos', 'moveis', 'limpeza', 'banho']);
             $table->text('description');
             $table->timestamps();
