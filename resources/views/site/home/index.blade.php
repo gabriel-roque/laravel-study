@@ -58,5 +58,15 @@
 
     @endforelse
 
+    {{--operacoes em PHP direto--}}
+
+    @php
+
+    @endphp
+
+    {{--Includes de arquivos--}}
+
+    @include('site.includes.sidebar')
+
 
 @endsection
