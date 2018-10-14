@@ -121,12 +121,12 @@ class ProdutoController extends Controller
 
         // UPDATE DADOS
 
-        $prod = $this->product->find(5);
-        $prod->update([
-            'name' => 'Update do nome',
-            'number' => 1255,
-            'description' => 'Update desc',
-        ]);
+//        $prod = $this->product->find(5);
+//        $prod->update([
+//            'name' => 'Update do nome',
+//            'number' => 1255,
+//            'description' => 'Update desc',
+//        ]);
 
         // UPDATE com WHERE
 
@@ -136,6 +136,16 @@ class ProdutoController extends Controller
 //            'number' => 1255,
 //            'description' => 'Update desc',
 //        ]);
+
+        // DELETE
+
+//        $prod = $this->product->find(4);
+//        $delete = $prod->delete();
+//        $prod = $this->product->destroy(2);
+
+        // DELETE com WHERE
+
+        $prod = $this->product->where('number', 454)->delete();
 
         // debugar
         // dd($prod);
