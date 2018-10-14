@@ -103,18 +103,45 @@ class ProdutoController extends Controller
     {
 //        METODO CREATE ME OBRIGA A DIZER QUAIS CAMPOS PODEM SER INSERIDOS ATRAS DA MINHA MODEL
 
-        $insert = $this->product->create([
-            'name' => 'Nome do produto',
-            'number' => 1564,
-            'active' => false,
-            'category' => 'eletronicos',
-            'description' => 'Descricao do produto',
+        //INSERIR DADOS
+
+//        $insert = $this->product->create([
+//            'name' => 'Nome do produto',
+//            'number' => 1564,
+//            'active' => false,
+//            'category' => 'eletronicos',
+//            'description' => 'Descricao do produto',
+//        ]);
+//
+//        if ($insert)
+//            return 'Inserido com sucesso';
+//        else
+//            return 'Falha ao inserir';
+
+
+        // UPDATE DADOS
+
+        $prod = $this->product->find(5);
+        $prod->update([
+            'name' => 'Update do nome',
+            'number' => 1255,
+            'description' => 'Update desc',
         ]);
 
-        if ($insert)
-            return 'Inserido com sucesso';
-        else
-            return 'Falha ao inserir';
+        // UPDATE com WHERE
+
+//        $prod = $this->product->where('number', 878);
+//        $prod->update([
+//            'name' => 'Update do nome',
+//            'number' => 1255,
+//            'description' => 'Update desc',
+//        ]);
+
+        // debugar
+        // dd($prod);
+
+
+
 
     }
 }
