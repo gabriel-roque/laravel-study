@@ -16,11 +16,19 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+// construtor para todos as funcoes funcionarem com esse DI
+    private $product;
 
-//    Injetando a dependencia do Model
-    public function index(Product $product)
+    public function __construct(Product $product)
     {
-        $products = $product->all();
+        $this->product = $product;
+    }
+
+
+
+    public function index()
+    {
+        $products = $this->product->all();
         return view('painel.products.index', compact('products'));
 
     }
@@ -89,5 +97,24 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function tests()
+    {
+//        METODO CREATE ME OBRIGA A DIZER QUAIS CAMPOS PODEM SER INSERIDOS ATRAS DA MINHA MODEL
+
+        $insert = $this->product->create([
+            'name' => 'Nome do produto',
+            'number' => 1564,
+            'active' => false,
+            'category' => 'eletronicos',
+            'description' => 'Descricao do produto',
+        ]);
+
+        if ($insert)
+            return 'Inserido com sucesso';
+        else
+            return 'Falha ao inserir';
+
     }
 }

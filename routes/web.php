@@ -110,6 +110,7 @@ Route::get('/painel', 'Painel\PainelController@painel');
 # usando CONTROLLERS ROSOURCES
 # php artisan make:controller pasta\\NomeDoController --resource
 
+Route::get('/painel/produtos/tests','Painel\ProdutoController@tests');
 Route::resource('/painel/produtos', 'Painel\ProdutoController');
 
 
