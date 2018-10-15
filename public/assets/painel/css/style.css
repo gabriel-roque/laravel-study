@@ -1,0 +1,17 @@
+.titlepg{
+    font-size: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.fa-trash-alt{
+    color: #d51721;
+}
+
+.btn-success{
+    margin: 15px;
+}
+
+.fa-plus{
+    margin-left: 5px;
+}
