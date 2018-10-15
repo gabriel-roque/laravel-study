@@ -4,7 +4,10 @@
 
     <h1 class="titlepg">Listagem dos produtos</h1>
 
-    <button type="button" class="btn btn-success">Cadastrar<i class="fas fa-plus"></i></button>
+    {{--{{url('painel/produtos/create')}} (PODE SER USADO ASSIM PARA APONTAR A URL)--}}
+    <a href="{{route('produtos.create')}}">
+        <button type="button" class="btn btn-success">Cadastrar<i class="fas fa-plus"></i></button>
+    </a>
 
     <table class="table table-striped table-dark">
         <tr>
