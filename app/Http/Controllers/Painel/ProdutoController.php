@@ -68,8 +68,17 @@ class ProdutoController extends Controller
 //        dd($request->input('name'));
 
 
+        // Mensagens personalizadas
+        $mensagens = [
+            'name.required' => 'O campo nome e obrigatorio',
+            'number.numeric' => 'Apenas numeros',
+            'number.required' => 'O campo de numero e obrigatorio',
+            'category.required' => 'O campo de categoria e obrigatorio',
+            'description.min' => 'A descricao deve ter no min 3 caracteres',
+        ];
+
         // VALIDACAO (regra de validacao fica em MODEL)
-        $this->validate($request, $this->product->rules);
+        $this->validate($request, $this->product->rules, $mensagens);
 
 
         // armazena em um variavel todos os dados
