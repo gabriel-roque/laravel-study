@@ -17,4 +17,14 @@ class Product extends Model
 //  Colunas que PODEM NAO ser preenchidas
 //    protected $guarded = [];
 
+
+    // VALIDACAO
+
+    public $rules = [
+        'name' => 'required|min:3|max:100',
+        'number' => 'required|numeric',
+        'category' => 'required',
+        'description' => 'min:3|max:1000',
+    ];
+
 }

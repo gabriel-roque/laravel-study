@@ -67,6 +67,11 @@ class ProdutoController extends Controller
         // Recupera um campo individual
 //        dd($request->input('name'));
 
+
+        // VALIDACAO (regra de validacao fica em MODEL)
+        $this->validate($request, $this->product->rules);
+
+
         // armazena em um variavel todos os dados
         $dataForm = $request->all();
 
