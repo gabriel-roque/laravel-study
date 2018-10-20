@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Painel;
 
+use App\Http\Requests\Painel\ProductFormRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Painel\Product;
@@ -53,7 +54,7 @@ class ProdutoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductFormRequest $request)
     {
         // Recupera tudo no formulario
 //        dd($request->all());
@@ -69,16 +70,16 @@ class ProdutoController extends Controller
 
 
         // Mensagens personalizadas
-        $mensagens = [
-            'name.required' => 'O campo nome e obrigatorio',
-            'number.numeric' => 'Apenas numeros',
-            'number.required' => 'O campo de numero e obrigatorio',
-            'category.required' => 'O campo de categoria e obrigatorio',
-            'description.min' => 'A descricao deve ter no min 3 caracteres',
-        ];
+//        $mensagens = [
+//            'name.required' => 'O campo nome e obrigatorio',
+//            'number.numeric' => 'Apenas numeros',
+//            'number.required' => 'O campo de numero e obrigatorio',
+//            'category.required' => 'O campo de categoria e obrigatorio',
+//            'description.min' => 'A descricao deve ter no min 3 caracteres',
+//        ];
 
-        // VALIDACAO (regra de validacao fica em MODEL)
-        $this->validate($request, $this->product->rules, $mensagens);
+        // VALIDACAO (regra de validacao fica em MODEL ou no FORM REQUEST)
+//        $this->validate($request, $this->product->rules, $mensagens);
 
 
         // armazena em um variavel todos os dados
