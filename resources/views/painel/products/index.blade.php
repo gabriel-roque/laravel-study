@@ -22,7 +22,7 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->description}}</td>
                 <td>
-                    <a href="">
+                    <a href="{{route('produtos.edit', $product->id)}}">
                         <i class="fas fa-edit"></i>
                     </a>
                     <a href="">

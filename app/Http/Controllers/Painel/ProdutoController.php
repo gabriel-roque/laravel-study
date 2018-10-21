@@ -117,7 +117,12 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Recupera os dados do regristo
+        $product = $this->product->find($id);
+
+        $title = "Editar produto";
+        $categorys = ['eletronicos', 'moveis', 'limpeza', 'banho'];
+        return view('painel.products.edit', compact('title', 'categorys', 'product'));
     }
 
     /**
@@ -127,8 +132,24 @@ class ProdutoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(ProductFormRequest $request, $id) // recebe somente form por PUT ou PATH
+    {                      /* DI de ja do meu form request
+                             com minhas regras de validacao*/
+
+
+        $dataform = $request->all();
+
+        $item = $this->product->find($id);
+
+        $dataForm['active'] = ( !isset($dataForm['active']) ) ? 0 : 1;
+
+        $update = $item->update($dataform);
+
+        if ($update)
+            return redirect()->route('produtos.index');
+        else
+            return redirect()->route('produtos.edit', $id)->with(['erros' => 'Falha ao editar']);
+
 
     }
 
