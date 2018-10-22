@@ -25,8 +25,8 @@
                     <a href="{{route('produtos.edit', $product->id)}}">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="">
-                        <i class="far fa-trash-alt"></i>
+                    <a href="{{route('produtos.show', $product->id)}}">
+                        <i class="fas fa-eye"></i>
                     </a>
                 </td>
             </tr>
