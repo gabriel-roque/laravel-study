@@ -33,6 +33,7 @@ class ProdutoController extends Controller
     {
         $title = 'Lista de Produtos';
         $products = $this->product->all();
+//        $products = $this->product->paginate(3); // paginacao TODO tem que implementar menu na view
         return view('painel.products.index', compact('products', 'title'));
     }
 
