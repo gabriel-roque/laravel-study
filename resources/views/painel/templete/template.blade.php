@@ -33,7 +33,7 @@
     
 
     <link rel="stylesheet" href="{{url('css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('js/app.js')}}">
+    <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
 
 
     
