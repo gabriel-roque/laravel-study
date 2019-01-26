@@ -1,6 +1,7 @@
 
 {{--$slot espaco generico para quem for usa poder alocar um dado no espaco da variavel--}}
 
+{{$erro}}
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand">{{$slot}}</a>
     <form class="form-inline">

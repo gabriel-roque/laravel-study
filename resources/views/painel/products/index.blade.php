@@ -6,6 +6,11 @@
     @component('components.navbar')
         Pesquisar
         {{--alocar dados na $slot--}}
+        @slot('erro')
+            <div class="alert alert-primary" role="alert">
+                A simple primary alert—check it out!
+            </div>
+        @endslot
     @endcomponent
 
     <h1 class="titlepg">Listagem dos produtos</h1>
