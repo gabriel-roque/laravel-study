@@ -2,6 +2,12 @@
 
 @section('content')
 
+
+    @component('components.navbar')
+        Pesquisar
+        {{--alocar dados na $slot--}}
+    @endcomponent
+
     <h1 class="titlepg">Listagem dos produtos</h1>
 
     {{--{{url('painel/produtos/create')}} (PODE SER USADO ASSIM PARA APONTAR A URL)--}}
