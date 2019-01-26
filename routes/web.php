@@ -118,3 +118,6 @@ Route::resource('/painel/produtos', 'Painel\ProdutoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/news', 'NewsController@listar');
