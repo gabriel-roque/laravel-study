@@ -121,3 +121,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/news', 'NewsController@listar');
+
+Route::get('/switch', 'NewsController@switch');
+
+Route::get('/switch/{op}', 'NewsController@opcoes');
