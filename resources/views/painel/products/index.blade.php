@@ -43,7 +43,7 @@
                 </td>
                 <td>
                     <span class="btn badge-secondary">
-
+                        {{--Uso do $loop para contagem de interacoes--}}
                         <span class="badge badge-primary">{{$loop->index+1}}</span> /
                         <span class="badge badge-danger">{{$loop->count}}</span>
 
