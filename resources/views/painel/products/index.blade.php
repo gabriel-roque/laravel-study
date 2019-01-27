@@ -25,6 +25,7 @@
             <th>Nome</th>
             <th>Descricao</th>
             <th>Acoes</th>
+            <th>Contagem por $loop</th>
         </tr>
 
         @foreach ($products as $product)
@@ -39,6 +40,14 @@
                     <a href="{{route('produtos.show', $product->id)}}">
                         <i class="fas fa-eye"></i>
                     </a>
+                </td>
+                <td>
+                    <span class="btn badge-secondary">
+
+                        <span class="badge badge-primary">{{$loop->index+1}}</span> /
+                        <span class="badge badge-danger">{{$loop->count}}</span>
+
+                    </span>
                 </td>
             </tr>
 
