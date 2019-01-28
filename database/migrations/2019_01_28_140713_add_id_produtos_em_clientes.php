@@ -28,6 +28,7 @@ class AddIdProdutosEmClientes extends Migration
     public function down()
     {
         Schema::table('clientes', function (Blueprint $table) {
+            // para dropar e sempre a ordem inversa do que foi adicionada
             $table->dropForeign('produto_id');
             $table->dropColumn('produto_id');
         });
